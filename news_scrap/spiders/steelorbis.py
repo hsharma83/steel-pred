@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
-from steelnews.items import SteelorbisItem
+from news_scrap.items import SteelorbisItem
 
 class SteelorbisSpider(scrapy.Spider):
     name = 'steelorbis'
@@ -9,7 +9,7 @@ class SteelorbisSpider(scrapy.Spider):
     start_urls = ['https://www.steelorbis.com/taxonomy/steel-news/?page=']
 
     def parse(self, response):
-    	for i in range(1,20):
+    	for i in range(1,2): #first page only
     		url = "https://www.steelorbis.com/taxonomy/steel-news/?page="+str(i)
     		yield scrapy.Request(url, self.parse_page)
 

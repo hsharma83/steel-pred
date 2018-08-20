@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 import scrapy
 
-from steelnews.items import MetaljunctionItem
+from news_scrap.items import MetaljunctionItem
 
 class ArticleSpider(scrapy.Spider):
     name = "article"
@@ -20,6 +20,7 @@ class ArticleSpider(scrapy.Spider):
             item['content'] = person.css('div.text div::text').extract_first()
             yield item
 
-        next_page = response.css('ul#newPage a::attr(href)').extract()[-2]
-        if next_page is not None:
-            yield response.follow(next_page, callback=self.parse)
+        #*This section is not required as we are daily scrapping*    
+        #next_page = response.css('ul#newPage a::attr(href)').extract()[-2]
+        #if next_page is not None:
+        #    yield response.follow(next_page, callback=self.parse)

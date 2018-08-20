@@ -9,20 +9,20 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'steelnews'
+BOT_NAME = 'news_scrap'
 
-SPIDER_MODULES = ['steelnews.spiders']
-NEWSPIDER_MODULE = 'steelnews.spiders'
+SPIDER_MODULES = ['news_scrap.spiders']
+NEWSPIDER_MODULE = 'news_scrap.spiders'
 
 #Export as CSV feed
 FEED_FORMAT = "csv"
-FEED_URI = "steeldata.csv"
+FEED_URI = "steelnews.csv"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'smint (+http://www.yourdomain.com)'
+#USER_AGENT = 'news_scrap (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
