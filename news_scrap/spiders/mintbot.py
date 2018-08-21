@@ -21,9 +21,9 @@ class MintbotSpider(scrapy.Spider):
 
     def parse_article(self, response):
         item = SmintItem()
-        item["headline"] = response.xpath("//meta[@name='subject']/@content").extract()
-        item["description"] = response.xpath("//meta[@name='description']/@content").extract()
+        item["title"] = response.xpath("//meta[@name='subject']/@content").extract()
+        #item["description"] = response.xpath("//meta[@name='description']/@content").extract()
         d = (response.css(".post-date::text").extract_first()).replace('Posted on ','')
         item["date"] = parser.parse(d.strip())
-        item["category"] = (response.css(".label::text").extract())[0].strip()
+        #item["category"] = (response.css(".label::text").extract())[0].strip()
         return item

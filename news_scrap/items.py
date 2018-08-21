@@ -9,10 +9,10 @@ import scrapy
 
 class SmintItem(scrapy.Item):
     # define the fields for your item here like:
-    headline = scrapy.Field()
-    description = scrapy.Field()
+    title = scrapy.Field()
+    #description = scrapy.Field()
     date = scrapy.Field()
-    category = scrapy.Field()
+    #category = scrapy.Field()
 
 class SteelorbisItem(scrapy.Item):
     title = scrapy.Field()
@@ -21,4 +21,4 @@ class SteelorbisItem(scrapy.Item):
 class MetaljunctionItem(scrapy.Item):
     title = scrapy.Field()
     date = scrapy.Field()
-    content = scrapy.Field()
+    #content = scrapy.Field()

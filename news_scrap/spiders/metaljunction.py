@@ -17,10 +17,10 @@ class ArticleSpider(scrapy.Spider):
             item = MetaljunctionItem()
             item['title'] = person.css('a::text').extract_first()
             item['date'] = person.css('span.date::text').extract_first()
-            item['content'] = person.css('div.text div::text').extract_first()
+            #item['content'] = person.css('div.text div::text').extract_first()
             yield item
 
-        #*This section is not required as we are daily scrapping*    
+        #*This section is not required as we are daily scrapping*
         #next_page = response.css('ul#newPage a::attr(href)').extract()[-2]
         #if next_page is not None:
         #    yield response.follow(next_page, callback=self.parse)
