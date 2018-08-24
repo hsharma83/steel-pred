@@ -16,9 +16,11 @@ metal = metal[metal.title != 'title']
 metal['date'] = pd.to_datetime(metal.date).dt.date
 
 #formatting for orbis file
+orb = orb[orb.date != 'date']
 orb['date'] = pd.to_datetime(orb.date).dt.date
 
 #formatting for mint file
+mint = mint[mint.date != 'date']
 mint['date'] = pd.to_datetime(mint.date).dt.date
 
 #merging
